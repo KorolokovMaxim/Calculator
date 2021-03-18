@@ -9,10 +9,7 @@ import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import org.mariuszgromada.math.mxparser.Expression
 
-//TODO Поменять метод equals , уменьшить код (добавить интерфей)
-//TODO проверить код
-//TODO тесты
-//TODO Удалить лишнее
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var display: EditText
@@ -20,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var parenthesesBtn: Button
     private lateinit var equalBtn: Button
     private lateinit var backspaceBtn: ImageButton
+    private val maxDisplayLength = 9
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,17 +37,17 @@ class MainActivity : AppCompatActivity() {
         }
 
         parenthesesBtn = findViewById(R.id.parentheses)
-        parenthesesBtn.setOnClickListener{
-           parentheses()
+        parenthesesBtn.setOnClickListener {
+            parentheses()
         }
 
         equalBtn = findViewById(R.id.equals)
-        equalBtn.setOnClickListener{
+        equalBtn.setOnClickListener {
             equalsCal()
         }
 
         backspaceBtn = findViewById(R.id.backspace)
-        backspaceBtn.setOnClickListener{
+        backspaceBtn.setOnClickListener {
             backspace()
         }
     }
@@ -64,11 +62,18 @@ class MainActivity : AppCompatActivity() {
 
 
         if (getString(R.string.display) == display.text.toString()) {
-            display.setText(strToAdd)
-            display.setSelection(cursorPosition + 1)
+            if (display.text.length < maxDisplayLength) {
+                display.setText(strToAdd)
+                display.setSelection(cursorPosition + 1)
+            }
+
+
         } else {
-            display.setText(String.format("%s%s%s", leftStr, strToAdd, rightStr))
-            display.setSelection(cursorPosition + 1)
+            if (display.text.length < maxDisplayLength) {
+                display.setText(String.format("%s%s%s", leftStr, strToAdd, rightStr))
+                display.setSelection(cursorPosition + 1)
+
+            }
         }
 
     }
@@ -82,29 +87,37 @@ class MainActivity : AppCompatActivity() {
     private fun parentheses() {
         val cursorPos: Int = display.selectionStart
         var openPar = 0
-        var closedPar = 0
+        val closedPar = 0
         val textLen: Int = display.text.length
         for (i in 0 until cursorPos) {
             if (display.text.toString().substring(i, i + 1) == "(") {
+
                 openPar += 1
             }
 
             if (display.text.toString().substring(i, i + 1) == ")") {
-                closedPar += 1
+                openPar += 1
             }
         }
 
         if (closedPar == openPar || display.text.toString()
                 .substring(textLen - 1, textLen) == "("
         ) {
-            updateText("(")
-            display.setSelection(cursorPos + 1)
+            if (display.text.length < maxDisplayLength) {
+                updateText("(")
+                display.setSelection(cursorPos + 1)
+            }
+
         } else if (closedPar < openPar && display.text.toString()
                 .substring(textLen - 1, textLen) != "("
         ) {
+
             updateText(")")
+
         }
-        display.setSelection(cursorPos + 1)
+        if (display.text.length < maxDisplayLength) {
+            display.setSelection(cursorPos + 1)
+        }
 
 
     }

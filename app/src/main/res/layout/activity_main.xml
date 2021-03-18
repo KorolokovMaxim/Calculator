@@ -314,6 +314,7 @@
         android:autofillHints="false"
         android:inputType="none"
         android:textSize="36sp"
+        android:maxLength="9"
         android:textAlignment="textEnd"
         tools:ignore="LabelFor"/>
 
