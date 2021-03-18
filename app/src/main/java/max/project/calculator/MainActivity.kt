@@ -3,13 +3,15 @@ package max.project.calculator
 import android.os.Bundle
 import android.text.SpannableStringBuilder
 import android.view.View
+
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import org.mariuszgromada.math.mxparser.Expression
 
-
+//TODO Добавить анимации на кнопки при нажатии
+//TODO Поменять библиотеку для расчета на свою
 class MainActivity : AppCompatActivity() {
 
     private lateinit var display: EditText
@@ -17,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var parenthesesBtn: Button
     private lateinit var equalBtn: Button
     private lateinit var backspaceBtn: ImageButton
-    private val maxDisplayLength = 9
+    private val maxDisplayLength = 17
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         clearBtn = findViewById(R.id.clear)
         clearBtn.setOnClickListener {
-            display.setText("")
+            display.setText("0")
         }
 
         parenthesesBtn = findViewById(R.id.parentheses)
