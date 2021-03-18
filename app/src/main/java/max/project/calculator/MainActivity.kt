@@ -3,7 +3,9 @@ package max.project.calculator
 import android.os.Bundle
 import android.text.SpannableStringBuilder
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import org.mariuszgromada.math.mxparser.Expression
 
@@ -14,6 +16,10 @@ import org.mariuszgromada.math.mxparser.Expression
 class MainActivity : AppCompatActivity() {
 
     private lateinit var display: EditText
+    private lateinit var clearBtn: Button
+    private lateinit var parenthesesBtn: Button
+    private lateinit var equalBtn: Button
+    private lateinit var backspaceBtn: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,9 +32,31 @@ class MainActivity : AppCompatActivity() {
                 display.setText("")
             }
         }
+
+        clearBtn = findViewById(R.id.clear)
+        clearBtn.setOnClickListener {
+            display.setText("")
+        }
+
+        parenthesesBtn = findViewById(R.id.parentheses)
+        parenthesesBtn.setOnClickListener{
+           parentheses()
+        }
+
+        equalBtn = findViewById(R.id.equals)
+        equalBtn.setOnClickListener{
+            equalsCal()
+        }
+
+        backspaceBtn = findViewById(R.id.backspace)
+        backspaceBtn.setOnClickListener{
+            backspace()
+        }
     }
 
     private fun updateText(strToAdd: String) {
+
+
         val oldString: String = display.text.toString()
         val cursorPosition: Int = display.selectionStart
         val leftStr: String = oldString.substring(0, cursorPosition)
@@ -45,63 +73,16 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
-    fun zeroBTN(view: View) {
-        updateText("0")
+    fun getBtnText(view: View) {
+        view as Button
+        updateText(view.text.toString())
     }
 
-    fun one(view: View) {
-        updateText("1")
-    }
 
-    fun two(view: View) {
-        updateText("2")
-    }
-
-    fun three(view: View) {
-        updateText("3")
-    }
-
-    fun four(view: View) {
-        updateText("4")
-    }
-
-    fun five(view: View) {
-        updateText("5")
-    }
-
-    fun six(view: View) {
-        updateText("6")
-    }
-
-    fun seven(view: View) {
-        updateText("7")
-    }
-
-    fun eight(view: View) {
-        updateText("8")
-    }
-
-    fun nine(view: View) {
-        updateText("9")
-    }
-
-    fun add(view: View) {
-        updateText("+")
-    }
-
-    fun clear(view: View) {
-        display.setText("")
-    }
-
-    fun exponent(view: View) {
-        updateText("^")
-    }
-
-    fun parentheses(view: View) {
+    private fun parentheses() {
         val cursorPos: Int = display.selectionStart
-        var openPar: Int = 0
-        var closedPar: Int = 0
+        var openPar = 0
+        var closedPar = 0
         val textLen: Int = display.text.length
         for (i in 0 until cursorPos) {
             if (display.text.toString().substring(i, i + 1) == "(") {
@@ -128,35 +109,15 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun divide(view: View) {
-        updateText("/")
-    }
-
-    fun multiply(view: View) {
-        updateText("*")
-    }
-
-    fun subtract(view: View) {
-        updateText("-")
-    }
-
-    fun plusMinus(view: View) {
-        updateText("-")
-    }
-
-    fun point(view: View) {
-        updateText(".")
-    }
-
-    fun equalsCal(view: View) {
+    private fun equalsCal() {
         val userExp: String = display.text.toString()
-        val exp: Expression = Expression(userExp)
+        val exp = Expression(userExp)
         val result: String = exp.calculate().toString()
         display.setText(result)
         display.setSelection(result.length)
     }
 
-    fun backspace(view: View) {
+    private fun backspace() {
         val cursorPos: Int = display.selectionStart
         val textLen: Int = display.text.length
 

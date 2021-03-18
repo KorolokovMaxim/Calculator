@@ -30,7 +30,6 @@
                 android:layout_weight="1"
                 android:background="@drawable/circle"
                 android:backgroundTint="#DD2C00"
-                android:onClick="clear"
                 android:text="@string/clear"
                 android:textColor="#fff"
                 android:textSize="24sp" />
@@ -43,7 +42,6 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:onClick="parentheses"
                 android:text="@string/parentheses"
                 android:textColor="#fff"
                 android:textSize="24sp" />
@@ -56,7 +54,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:onClick="exponent"
+                android:onClick="getBtnText"
                 android:text="@string/exponent"
                 android:textColor="#fff"
                 android:textSize="24sp" />
@@ -69,7 +67,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:onClick="divide"
+                android:onClick="getBtnText"
                 android:text="@string/divide"
                 android:textColor="#fff"
                 android:textSize="24sp" />
@@ -87,7 +85,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:onClick="seven"
+                android:onClick="getBtnText"
                 android:text="@string/seven"
                 android:textColor="#fff"
                 android:textSize="24sp" />
@@ -100,7 +98,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:onClick="eight"
+                android:onClick="getBtnText"
                 android:text="@string/eight"
                 android:textColor="#fff"
                 android:textSize="24sp" />
@@ -113,7 +111,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:onClick="nine"
+                android:onClick="getBtnText"
                 android:text="@string/nine"
                 android:textColor="#fff"
                 android:textSize="24sp" />
@@ -126,7 +124,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:onClick="multiply"
+                android:onClick="getBtnText"
                 android:text="@string/multiply"
                 android:textColor="#fff"
                 android:textSize="24sp" />
@@ -144,7 +142,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:onClick="four"
+                android:onClick="getBtnText"
                 android:text="@string/four"
                 android:textColor="#fff"
                 android:textSize="24sp" />
@@ -157,7 +155,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:onClick="five"
+                android:onClick="getBtnText"
                 android:text="@string/five"
                 android:textColor="#fff"
                 android:textSize="24sp" />
@@ -170,7 +168,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:onClick="six"
+                android:onClick="getBtnText"
                 android:text="@string/six"
                 android:textColor="#fff"
                 android:textSize="24sp" />
@@ -183,7 +181,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:onClick="subtract"
+                android:onClick="getBtnText"
                 android:text="@string/subtract"
                 android:textColor="#fff"
                 android:textSize="24sp" />
@@ -201,7 +199,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:onClick="one"
+                android:onClick="getBtnText"
                 android:text="@string/one"
                 android:textColor="#fff"
                 android:textSize="24sp" />
@@ -214,7 +212,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:onClick="two"
+                android:onClick="getBtnText"
                 android:text="@string/two"
                 android:textColor="#fff"
                 android:textSize="24sp" />
@@ -227,7 +225,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:onClick="three"
+                android:onClick="getBtnText"
                 android:text="@string/three"
                 android:textColor="#fff"
                 android:textSize="24sp" />
@@ -240,7 +238,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:onClick="add"
+                android:onClick="getBtnText"
                 android:text="@string/add"
                 android:textColor="#fff"
                 android:textSize="24sp" />
@@ -259,7 +257,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:onClick="plusMinus"
+                android:onClick="getBtnText"
                 android:text="@string/plusMinus"
                 android:textColor="#fff"
                 android:textSize="24sp" />
@@ -272,7 +270,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:onClick="zeroBTN"
+                android:onClick="getBtnText"
                 android:text="@string/zero"
                 android:textColor="#fff"
                 android:textSize="24sp" />
@@ -285,7 +283,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/circle"
-                android:onClick="point"
+                android:onClick="getBtnText"
                 android:text="@string/point"
                 android:textColor="#fff"
                 android:textSize="24sp" />
@@ -298,7 +296,6 @@
                 android:layout_margin="5dp"
                 android:background="@drawable/circle"
                 android:backgroundTint="#43A047"
-                android:onClick="equalsCal"
                 android:text="@string/equals"
                 android:textColor="#fff"
                 android:textSize="24sp" />
@@ -321,14 +318,13 @@
         tools:ignore="LabelFor"/>
 
     <ImageButton
-        android:id="@+id/button21"
+        android:id="@+id/backspace"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:background="@drawable/circle"
         android:contentDescription="@string/backspace"
-        android:onClick="backspace"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
